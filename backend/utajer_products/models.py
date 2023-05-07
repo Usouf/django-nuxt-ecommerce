@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 from utajer_accounts.models import User
 
@@ -64,7 +65,10 @@ class Product(BaseModel):
 class ProductReview(BaseModel):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="reviews")
     # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviews")
-    rating = models.IntegerField()
+    rating = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+    ])
     comment = models.TextField()
 
     class Meta:
