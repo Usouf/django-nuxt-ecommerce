@@ -1,0 +1,10 @@
+celery==5.2.7
+Django==4.2.1
+django-celery-beat==2.5.0
+django-cors-headers==3.14.0
+django-import-export==3.2.0
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.2.2
+Pillow==9.5.0
+prompt-toolkit==3.0.38
+redis==4.5.4
