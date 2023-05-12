@@ -7,4 +7,21 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
+    router: {
+        options: {
+            linkActiveClass: "active",
+            linkExactActiveClass: "exact-active"
+        }
+    },
+    modules: [
+        [
+            '@pinia/nuxt',
+            {
+                autoImports: ['defineStore', 'acceptHMRUpdate']
+            },
+        ],
+    ],
+    imports: {
+        dirs: ['stores'],
+    }
 })

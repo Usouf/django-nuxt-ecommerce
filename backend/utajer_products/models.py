@@ -24,6 +24,7 @@ class Category(BaseModel):
 
 class ProductImage(BaseModel):
     image = models.ImageField(upload_to='product_images', default='product_images/default.jpg')
+    preview_image = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'Product Image'
