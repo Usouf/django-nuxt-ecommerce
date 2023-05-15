@@ -1,6 +1,5 @@
 <template>
-    <div>
-        Hello in {{ slug }} details
+    <div class="my-12">
         <ProductDetails :product="currentProduct"/>
     </div>
 </template>

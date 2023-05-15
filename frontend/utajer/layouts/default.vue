@@ -21,11 +21,11 @@ onMounted(() => {
 </script>
 
 <style>
-    .exact-active {
-        color: primary
-    }
+.exact-active {
+    @apply text-primary-700
+}
 
-    .active {
-        color: #12b488
-    }
+.active {
+    @apply text-primary-700
+}
 </style>
