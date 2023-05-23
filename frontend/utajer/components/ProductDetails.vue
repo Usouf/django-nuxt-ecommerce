@@ -16,6 +16,7 @@
             <div class="col-span-2">
                 <div class="px-4 mx-auto max-w-2xl">
                     <h2 class="mb-2 text-xl font-semibold leading-none text-gray-900 md:text-2xl dark:text-white">{{ product.name }}</h2>
+                    <StarRating class="mb-2" :rating="product.rating" :id="product.id" />
                     <p class="mb-4 text-xl font-extrabold leading-none text-gray-900 md:text-2xl dark:text-white">$ {{ product.price }}</p>
                     <dl>
                         <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Details</dt>

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'drf_yasg',
     'corsheaders',
+    'import_export',
     'utajer_accounts',
     'utajer_products'
 ]

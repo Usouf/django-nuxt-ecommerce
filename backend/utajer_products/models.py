@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.text import slugify
 
 from utajer_accounts.models import User
 
@@ -12,7 +13,7 @@ class Category(BaseModel):
     image = models.ImageField(null=True, blank=True, upload_to='category_images', default='category_images/default.jpg')
     icon = models.ImageField(null=True, blank=True, upload_to='category_icons', default='category_icons/default.jpg')
 
-    slug = models.SlugField(default="", null=False)
+    slug = models.SlugField(default="", null=False, unique=True)
 
     class Meta:
         verbose_name = 'Category'
@@ -42,7 +43,7 @@ class Product(BaseModel):
     categories = models.ManyToManyField(Category, related_name="products")
     images = models.ManyToManyField(ProductImage, blank=True, related_name="products")
 
-    slug = models.SlugField(default="", null=False)
+    slug = models.SlugField(default="", null=False, unique=True)
 
     class Meta:
         verbose_name = 'Product'
@@ -58,7 +59,7 @@ class Product(BaseModel):
         reviews = self.reviews.all()
         if not reviews:
             return 0
-        return sum([review.rating for review in reviews]) / len(reviews)
+        return round(sum([review.rating for review in reviews]) / len(reviews), 1)
 
     def __str__(self):
         return self.name

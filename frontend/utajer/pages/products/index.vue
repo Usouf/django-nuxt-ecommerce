@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>Products</p>
-        <div class="grid md:grid-cols-4 grid-cols-2 gap-5">
+        <div class="grid md:grid-cols-4 grid-cols-1 gap-5">
             <div v-for="p in products" :key="p.id">
                 <ProductCard :product="p" />
             </div>
